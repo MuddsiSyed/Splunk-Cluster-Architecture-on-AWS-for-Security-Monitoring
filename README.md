@@ -1,2 +1,2 @@
-# Splunk-Clustered-Architecture-for-Threat-Detection-and-Response
+# Splunk Clustered Architecture for Threat Detection and Response
 

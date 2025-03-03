@@ -27,4 +27,22 @@ REF 1 - SPLUNK CLUSTERED ARCHITECTURE
 - Splunk Apps/Technology Add-ons (TAs): Used for simplifying the integration of Snort and DHCP logs with Splunk.
 - Amazon Web Services (AWS): Utilized AWS EC2 for scalable compute resources and other AWS services to manage and scale the architecture efficiently in the cloud.
 
+## Steps:
+
+### Setting up Splunk Clustered Architecture on Local Computer and AWS EC2 Instances
+#### Heavy Forwarder
+- Heavy Forwarder will be installed on my local computer (Ubuntu) for this project
+- Open Terminal and run the following commands to install Splunk Enterprise
+- sudo apt-get update && sudo apt-get upgrade (To upgrade Ubuntu)
+- wget -O splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.2.2/linux/splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb" (To Download Splunk DEB File)
+- sudo apt install ./splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb (To install Splunk Enterprise)
+- sudo /opt/splunk/bin/splunk start — accept-license (To accept the license before starting Splunk
+![Screenshot from 2025-03-04 04-10-56](https://github.com/user-attachments/assets/dff46161-b59b-4420-93f1-5ca144fffa7e)
+REF 2 - Accepting License
+- Press and enter Y to accept the licence and proceed with the installation
+- Create your username and password for splunk log in
+![Screenshot from 2025-03-04 04-16-57](https://github.com/user-attachments/assets/3fe708ef-95f1-483a-8316-e5f912c7b59d)
+REF 3 - Creating Username and Password
+- sudo /opt/splunk/bin/splunk start (To start Splunk)
+
 This project will provide a comprehensive understanding of both security monitoring and cloud-based architecture, allowing for the development of a flexible and scalable solution for real-time network analysis and threat detection.

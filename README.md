@@ -44,5 +44,14 @@ REF 2 - Accepting License
 ![Screenshot from 2025-03-04 04-16-57](https://github.com/user-attachments/assets/3fe708ef-95f1-483a-8316-e5f912c7b59d)
 REF 3 - Creating Username and Password
 - sudo /opt/splunk/bin/splunk start (To start Splunk)
+![Screenshot from 2025-03-04 04-23-40](https://github.com/user-attachments/assets/a385f040-a235-4c47-a9d2-6fe907b01752)
+REF 4 - Sucessfull Splunk Installation
+- If you see the above screen then splunk is successfully installed
+- For local computer, we can access the splunk's web interface from http://127.0.0.1:8000
+- Log in to splunk's web interface and go to Server Settings > General Settings and enable SSL (HTTPS), save and restart splunk when you get the prompt to restart
+![Screenshot from 2025-03-04 04-33-07](https://github.com/user-attachments/assets/316dbbe8-aec4-43d3-b7a2-329838217d5b)
+REF 5 - Enabling SSL (HTTPS)
+- Now you can access splunk from https://127.0.0.1:8000 on your local machine
+![Screenshot from 2025-03-04 04-39-33](https://github.com/user-attachments/assets/8beb6b0c-3a63-480b-8fe6-c6af8327b981)
 
 This project will provide a comprehensive understanding of both security monitoring and cloud-based architecture, allowing for the development of a flexible and scalable solution for real-time network analysis and threat detection.

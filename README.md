@@ -29,9 +29,9 @@ REF 1 - SPLUNK CLUSTERED ARCHITECTURE
 
 ## Steps:
 
-### Setting up Splunk Clustered Architecture on Local Computer and AWS EC2 Instances
+### Setting up Splunk Clustered Architecture on Local Machine and AWS EC2 Instances
 #### Heavy Forwarder
-- Heavy Forwarder will be installed on my local computer (Ubuntu) for this project
+- Heavy Forwarder will be installed on my local machine (Ubuntu) for this project
 - Open Terminal and run the following commands to install Splunk Enterprise
 - sudo apt-get update && sudo apt-get upgrade (To upgrade Ubuntu)
 - wget -O splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.2.2/linux/splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb" (To Download Splunk DEB File)
@@ -53,5 +53,7 @@ REF 4 - Sucessfull Splunk Installation
 REF 5 - Enabling SSL (HTTPS)
 - Now you can access splunk from https://127.0.0.1:8000 on your local machine
 ![Screenshot from 2025-03-04 04-39-33](https://github.com/user-attachments/assets/8beb6b0c-3a63-480b-8fe6-c6af8327b981)
+REF 6 - Log IN on SSL enabled splunk web
+- From the splunk web page, go to Server Settings > Global Banner, click on Banner Visibility to make it (ON), choose yellow and enter Heavy Forwarder in the message field
 
 This project will provide a comprehensive understanding of both security monitoring and cloud-based architecture, allowing for the development of a flexible and scalable solution for real-time network analysis and threat detection.

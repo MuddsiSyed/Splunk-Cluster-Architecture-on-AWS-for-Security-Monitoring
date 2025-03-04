@@ -75,4 +75,30 @@ REF 10 - Creating a new source type and index to for the DHCP logs to be ingeste
 - Click Next to review the input settings and Next to confirm the settings to create the UDP Input successfully.
 ![Screenshot from 2025-03-05 02-14-30](https://github.com/user-attachments/assets/614861b5-b9e6-4bb2-8a89-c21009600bed)
 REF 11 - UDP Input created successfully
+- Click on start searching and you will see the logs coming in as the DHCP logs are updated on the router
+![Screenshot from 2025-03-05 02-25-07](https://github.com/user-attachments/assets/6ba85463-d250-4074-b648-10f82cf6ba53)
+REF 12 - Searching the logs for the UDP input we just created
+
+#### Installing and Configuring Snort
+- Enter the below commands on Terminal
+- sudo apt-get install snort -y (To install Snort)
+![Screenshot from 2025-03-05 03-05-24](https://github.com/user-attachments/assets/2e0e1abd-8bc1-49ca-8cb4-8d91a58fd9b8)
+REF 13 - Configuring Snort
+- When you see the above screen, open another terminal and enter the below command to find the range of your IP addresses
+- ip addr (To find the IP address and range)
+- As my local computer is connected to the wifi router the interface and the IP Address will be as specified in the below image --
+![Screenshot from 2025-03-05 03-10-59](https://github.com/user-attachments/assets/d4f86f17-20a6-4fae-8b11-66e42a6ad76e)
+REF 14 - Finding the interface name and the range of your IP address
+- Switch back to the terminal where you were downloading snort and enter the IP address as 192.168.0.0/24 to configure the Snort
+- Press Enter and snort will be installed successfully
+- sudo ip link set wlp0s20f3 promisc on (To turn on promisc on the interface)
+![Screenshot from 2025-03-05 03-38-20](https://github.com/user-attachments/assets/f6c1c4c8-432b-427a-9634-fbceb53ad19c)
+REF 15 - Turning on promisc on the interface
+- sudo vim /etc/snort/snort.conf (to edit the snort configuration file)
+- scroll down and edit network variable from any to ipvar HOME_NET 192.168.0.0/24
+![Screenshot from 2025-03-05 03-46-01](https://github.com/user-attachments/assets/4100ce8a-1c4b-4a7d-a423-00f9ff2fa354)
+REF 16 - Editing the network variable
+- :wq (save the file)
+
+
 

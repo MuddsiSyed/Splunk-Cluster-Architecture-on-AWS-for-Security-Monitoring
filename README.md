@@ -64,5 +64,12 @@ REF 7 - Setting up a banner to identify Heavy Forwarder in the cluster architect
 - Let's configure the Heavy Forwarder to receive the logs from the UDP port 514
 - Go to Settings > Data Input and click on + Add New for UDP type
  ![Screenshot from 2025-03-04 22-14-32](https://github.com/user-attachments/assets/91e694d0-c722-4215-97cb-05388dc79b83)
+REF 8 - Adding new UDP Data Input
+- Enter 514 as the PORT and click NEXT
+![Screenshot from 2025-03-05 01-49-12](https://github.com/user-attachments/assets/7b7ca578-c462-4db3-86ae-7e2618581a54)
+REF 9 - Selecting UDP and entering the Port Number from where you will receive the data
+- Select New and enter "DHCP Logs" as source type and "DHCP Logs from Router"
+![Screenshot from 2025-03-05 01-54-50](https://github.com/user-attachments/assets/c40b7a0e-5cd3-4e45-a307-07a9866afa2d)
+REF 10 - Creating a new source type and index to for the DHCP logs to be ingested
 
 This project will provide a comprehensive understanding of both security monitoring and cloud-based architecture, allowing for the development of a flexible and scalable solution for real-time network analysis and threat detection.

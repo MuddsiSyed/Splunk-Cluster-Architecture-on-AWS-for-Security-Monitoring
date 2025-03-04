@@ -7,9 +7,10 @@ The goal of this project is to design and implement a scalable Splunk Cluster Ar
 
 
 ![Splunk Clustered Architecture Black](https://github.com/user-attachments/assets/cd2c503a-9cfc-4063-95f6-6d599d5105a1)
-
 REF 1 - SPLUNK CLUSTERED ARCHITECTURE
 
+
+This project will provide a comprehensive understanding of both security monitoring and cloud-based architecture, allowing for the development of a flexible and scalable solution for real-time network analysis and threat detection.
 
 ## Skills Learned:
 
@@ -71,5 +72,7 @@ REF 9 - Selecting UDP and entering the Port Number from where you will receive t
 - Select New and enter "DHCP Logs" as source type and "DHCP Logs from Router"
 ![Screenshot from 2025-03-05 01-54-50](https://github.com/user-attachments/assets/c40b7a0e-5cd3-4e45-a307-07a9866afa2d)
 REF 10 - Creating a new source type and index to for the DHCP logs to be ingested
+- Click Next to review the input settings and Next to confirm the settings to create the UDP Input successfully.
+![Screenshot from 2025-03-05 02-14-30](https://github.com/user-attachments/assets/614861b5-b9e6-4bb2-8a89-c21009600bed)
+REF 11 - UDP Input created successfully
 
-This project will provide a comprehensive understanding of both security monitoring and cloud-based architecture, allowing for the development of a flexible and scalable solution for real-time network analysis and threat detection.

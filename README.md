@@ -99,6 +99,13 @@ REF 15 - Turning on promisc on the interface
 ![Screenshot from 2025-03-05 03-46-01](https://github.com/user-attachments/assets/4100ce8a-1c4b-4a7d-a423-00f9ff2fa354)
 REF 16 - Editing the network variable
 - :wq (save the file)
-
+- Now to test snort we can create a custom rule to trigger an alert
+- sudo vim etc/snort/rules/local.rules (Open the local rules file to add custom rules)
+- Add the below rules to trigger an alert for ICMP and SSH attempt onto my network
+- alert icmp any any -> $HOME_NET any (msg:"Ping Detected!"; sid:100001; rev:1;)
+- alert tcp any any -> $HOME_NET 22 (msg:"SSH Authentication Attempt"; sid: 100002; rev: 1;)
+![Screenshot from 2025-03-05 04-18-17](https://github.com/user-attachments/assets/7a6aab89-322a-4c28-a167-03ed5451e507)
+REF 17 - Adding custom rules on local.rules file
+- :wq (save the file)
 
 

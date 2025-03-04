@@ -55,5 +55,14 @@ REF 5 - Enabling SSL (HTTPS)
 ![Screenshot from 2025-03-04 04-39-33](https://github.com/user-attachments/assets/8beb6b0c-3a63-480b-8fe6-c6af8327b981)
 REF 6 - Log IN on SSL enabled splunk web
 - From the splunk web page, go to Server Settings > Global Banner, click on Banner Visibility to make it (ON), choose yellow and enter Heavy Forwarder in the message field
+![Screenshot from 2025-03-04 21-59-59](https://github.com/user-attachments/assets/7cf5cfd5-0cba-4548-a07f-2b03230c79fd)
+REF 7 - Setting up a banner to identify Heavy Forwarder in the cluster architecture
+- Now our Heavy Forwarder is ready for configuration
+
+#### Configuring Heavy Forwarder To Receive and Ingest The Data
+- I have configured my wireless router to send the DHCP logs through UDP port 514 to 192.168.0.105 (IP address of Heavy Forwarder)
+- Let's configure the Heavy Forwarder to receive the logs from the UDP port 514
+- Go to Settings > Data Input and click on + Add New for UDP type
+ ![Screenshot from 2025-03-04 22-14-32](https://github.com/user-attachments/assets/91e694d0-c722-4215-97cb-05388dc79b83)
 
 This project will provide a comprehensive understanding of both security monitoring and cloud-based architecture, allowing for the development of a flexible and scalable solution for real-time network analysis and threat detection.

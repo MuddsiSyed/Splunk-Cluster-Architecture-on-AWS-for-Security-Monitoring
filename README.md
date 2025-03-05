@@ -137,7 +137,21 @@ REF 22 - SNORPY - A web based snort rule creator
 - In order to ingest those alerts in Splunk, we can create a data input to monitor and index the above directory
 - In splunk web interface, go Settings > Data Inputs and click on "Add New" for "Files and Directories"
 ![Screenshot from 2025-03-05 21-28-35](https://github.com/user-attachments/assets/093fc5c4-8101-4d27-ab8d-a226f7e9aa4b)
+REF 23 - Adding new Data Input under Files and Directories
 - Click Browse on File or Directory field and select source as /var/log/snort/ as shown below
 ![Screenshot from 2025-03-05 21-32-19](https://github.com/user-attachments/assets/98511d0f-04bf-4b7a-8a35-ca7aa33a0110)
+REF 24 - Selecting the snort alert file directory
+- Click Next and select the source type as "snort" which will be under the drop down option "Network and Security"
+- Create a new index "snort_alert" to ingest the snort alert data into this index
+![Screenshot from 2025-03-05 21-38-43](https://github.com/user-attachments/assets/ff400a8a-14ae-42ee-aa4d-ce895aecae02)
+REF 25 - Selecting the source type and creating a new index for snort alerts
+- Click Review to review data input and click Submit
+- Click on start searching and select the preset as All time (real-time) to monitor the index in real time
+![Screenshot from 2025-03-05 21-46-19](https://github.com/user-attachments/assets/0a57d519-97c6-4d9d-bde2-afbcffe1cfa6)
+- Let's try to ping our IP address from another computer and check the real time search on splunk to see if the alert logs are being ingested in real time
+![image (2)](https://github.com/user-attachments/assets/685c28c7-18ee-422d-94c1-450565d1ca13)
+![Screenshot from 2025-03-05 21-52-32](https://github.com/user-attachments/assets/93644cea-0d7f-498a-9955-f72f4706628b)
+
+
 
 

@@ -175,10 +175,12 @@ REF 29 - Starting EC2 instances on AWS for Indexer Cluster
 REF 30 - Creating Elastic IPs
 - Click Allocate and repeat this process until you have 3 elastic IP addresses
 ![Screenshot from 2025-03-06 02-56-50](https://github.com/user-attachments/assets/bd4e6035-516e-43c6-aa0f-de76327d7099)
+REF 31 - Associating Elastic IPs
 - Select one of the allocated IP address and click on Actions > Associate Elastic IP Address
 - Select the instance "Indexer_1" and click Associate </br>
 Repeat this process until "Indexer_2" and "Cluster_Master" have the associated Elastic IPs
-
+![Screenshot from 2025-03-06 03-12-33](https://github.com/user-attachments/assets/0a1f4de5-7cca-46ac-ae49-61cd67abf228)
+REF 32 - All 3 Elastic IPs associated with the "Indexer_1" , "Indexer_2" and "Cluster_Master" respectively
 
 
 

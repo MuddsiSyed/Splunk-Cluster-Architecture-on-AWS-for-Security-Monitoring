@@ -60,7 +60,7 @@ REF 6 - Log IN on SSL enabled splunk web
 REF 7 - Setting up a banner to identify Heavy Forwarder in the cluster architecture
 - Now our Heavy Forwarder is ready for configuration
 
-#### Configuring Heavy Forwarder To Receive and Ingest The Data
+#### Configuring Heavy Forwarder To Receive The DHCP Logs From The Router
 - I have configured my wireless router to send the DHCP logs through UDP port 514 to 192.168.0.105 (IP address of Heavy Forwarder)
 - Let's configure the Heavy Forwarder to receive the logs from the UDP port 514
 - Go to Settings > Data Input and click on + Add New for UDP type
@@ -107,5 +107,25 @@ REF 16 - Editing the network variable
 ![Screenshot from 2025-03-05 04-18-17](https://github.com/user-attachments/assets/7a6aab89-322a-4c28-a167-03ed5451e507)
 REF 17 - Adding custom rules on local.rules file
 - :wq (save the file)
+- Run the below command on the terminal to start the snort in alert mode and output the logs on the terminal's console
+-  sudo snort -q -l /var/log/snort -i wlp0s20f3 -A console -c /etc/snort/snort.conf
+![Screenshot from 2025-03-05 20-23-20](https://github.com/user-attachments/assets/53a19a1a-8cee-4031-b28d-a8f16f8e2e21)
+REF 18 - Running snort in alert mode and output the logs on the console
+- Let's ping our IP address from another machine to see if we are getting the alerts
+![image (1)](https://github.com/user-attachments/assets/45127b21-ad9b-4db9-b082-f5d540c92c06)
+REF 19 - Pinging our IP address from another computer
+- On our local machine, we can now see the alerts are being triggered on the terminal as below
+![Screenshot from 2025-03-05 20-37-22](https://github.com/user-attachments/assets/a55874b9-6511-4b4e-8572-5ceb413db518)
+REF 20 - Successfully receiving the triggered alerts on our terminal
+- Run the below command to start snort in alert mode with 'fast' option which writes the logs in the default alert file
+- sudo snort -q -l /var/log/snort -i wlp0s20f3 -A fast -c /etc/snort/snort.conf
+- The alert file is located in /var/log/snort/ . Open the file to check if the alerts are being recorded.
+- sudo /var/log/snort/alert
+![Screenshot from 2025-03-05 21-06-10](https://github.com/user-attachments/assets/661ae82b-dbf9-468c-b9e4-6b9eae4da2fb)
+REF 21 - The alert file which is being updated for every triggered snort alert
+- We see that the alert logs are being stored in the alert file and this file will be updated with every triggered alert.
+- 
+
+
 
 

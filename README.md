@@ -132,7 +132,12 @@ REF 21 - The alert file which is being updated for every triggered snort alert
 ![Screenshot from 2025-03-05 21-18-38](https://github.com/user-attachments/assets/7db036be-2463-4da0-99f1-194803be9015)
 REF 22 - SNORPY - A web based snort rule creator
 
-
-
+#### Ingesting Snort Alerts in Splunk
+- We know all the snort alerts are being logged to /var/log/snort/
+- In order to ingest those alerts in Splunk, we can create a data input to monitor and index the above directory
+- In splunk web interface, go Settings > Data Inputs and click on "Add New" for "Files and Directories"
+![Screenshot from 2025-03-05 21-28-35](https://github.com/user-attachments/assets/093fc5c4-8101-4d27-ab8d-a226f7e9aa4b)
+- Click Browse on File or Directory field and select source as /var/log/snort/ as shown below
+![Screenshot from 2025-03-05 21-32-19](https://github.com/user-attachments/assets/98511d0f-04bf-4b7a-8a35-ca7aa33a0110)
 
 

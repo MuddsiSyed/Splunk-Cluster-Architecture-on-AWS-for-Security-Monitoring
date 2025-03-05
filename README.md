@@ -30,7 +30,7 @@ This project will provide a comprehensive understanding of both security monitor
 
 ## Steps:
 
-### Setting up Splunk Clustered Architecture on Local Machine and AWS EC2 Instances
+### Setting up Heavy Forwarder and configuring it to receive and ingest the DHCP and Snort IDS logs respectively
 #### Heavy Forwarder
 - Heavy Forwarder will be installed on my local machine (Ubuntu) for this project
 - Open Terminal and run the following commands to install Splunk Enterprise
@@ -154,6 +154,17 @@ REF 26 - Searching on splunk for snort alert logs in real time
 REF 27 - Pinging our IP address from another computer
 ![Screenshot from 2025-03-05 21-52-32](https://github.com/user-attachments/assets/93644cea-0d7f-498a-9955-f72f4706628b)
 REF 28 - Triggered alerts being logged in splunk in real time
+
+###### The Heavy Forwarder is now configured to receive the DHCP and Snort IDS logs in real time.
+
+### Setting Up AWS EC2 Instances and Splunk Cluster Architecture 
+#### Setting Up the indexer clusters on AWS EC2 instances
+- To set up an indexer cluster, we atleast need 2 indexers and 1 cluster master (manager node)
+- Let's spin up 3 EC2 instances as below </br>
+  Operating System: Ubuntu </br>
+  Instance Type: t2.medium </br>
+  Security Group: Keep the same security group you select for all instances </br>
+  Configure Storage: 30GiB </br>
 
 
 

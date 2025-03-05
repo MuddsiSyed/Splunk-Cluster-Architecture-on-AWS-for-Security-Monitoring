@@ -148,9 +148,12 @@ REF 25 - Selecting the source type and creating a new index for snort alerts
 - Click Review to review data input and click Submit
 - Click on start searching and select the preset as All time (real-time) to monitor the index in real time
 ![Screenshot from 2025-03-05 21-46-19](https://github.com/user-attachments/assets/0a57d519-97c6-4d9d-bde2-afbcffe1cfa6)
+REF 26 - Searching on splunk for snort alert logs in real time
 - Let's try to ping our IP address from another computer and check the real time search on splunk to see if the alert logs are being ingested in real time
 ![image (2)](https://github.com/user-attachments/assets/685c28c7-18ee-422d-94c1-450565d1ca13)
+REF 27 - Pinging our IP address from another computer
 ![Screenshot from 2025-03-05 21-52-32](https://github.com/user-attachments/assets/93644cea-0d7f-498a-9955-f72f4706628b)
+REF 28 - Triggered alerts being logged in splunk in real time
 
 
 

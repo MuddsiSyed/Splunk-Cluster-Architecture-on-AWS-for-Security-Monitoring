@@ -39,7 +39,7 @@ This project will provide a comprehensive understanding of both security monitor
 - sudo apt install ./splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb (To install Splunk Enterprise)
 - sudo /opt/splunk/bin/splunk start — accept-license (To accept the license before starting Splunk
 ![Screenshot from 2025-03-04 04-10-56](https://github.com/user-attachments/assets/dff46161-b59b-4420-93f1-5ca144fffa7e)
-REF 2 - Accepting License
+REF 2 - Accepting License 
 - Press and enter Y to accept the licence and proceed with the installation
 - Create your username and password for splunk log in
 ![Screenshot from 2025-03-04 04-16-57](https://github.com/user-attachments/assets/3fe708ef-95f1-483a-8316-e5f912c7b59d)
@@ -160,12 +160,11 @@ REF 28 - Triggered alerts being logged in splunk in real time
 ### Setting Up AWS EC2 Instances and Splunk Cluster Architecture 
 #### Setting Up the indexer clusters on AWS EC2 instances
 - To set up an indexer cluster, we atleast need 2 indexers and 1 cluster master (manager node)
-- Let's spin up 3 EC2 instances as below </br>
+- Let's spin up 3 EC2 instances with the below configuration </br>
   Operating System: Ubuntu </br>
   Instance Type: t2.medium </br>
   Security Group: Keep the same security group you select for all instances </br>
   Configure Storage: 30GiB </br>
-
 
 
 

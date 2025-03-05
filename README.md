@@ -165,6 +165,23 @@ REF 28 - Triggered alerts being logged in splunk in real time
   Instance Type: t2.medium </br>
   Security Group: Keep the same security group you select for all instances </br>
   Configure Storage: 30GiB </br>
+  Edit The name Of the Instances to Indexer_1, Indexer_2 and Cluster_Master
+![Screenshot from 2025-03-06 02-38-34](https://github.com/user-attachments/assets/cb968cbd-170e-4276-8e81-7ec8982be8c3)
+REF 29 - Starting EC2 instances on AWS for Indexer Cluster
+- As all of the instances are assigned dynamic public IP addresses, we would need static public IP addresses assigned to each of them so that they remain the same even if the instance is restarted
+- To assign a static public IP address on AWS, click on Elastic IP's under Network & Security on the options on the left
+- Click on Allocate Elastic IP Address and make sure the Network Border Group is set to the same network your instaces is assigned to
+![Screenshot from 2025-03-06 02-52-43](https://github.com/user-attachments/assets/27bfb6e2-90d9-4402-863e-3931bb066acf)
+REF 30 - Creating Elastic IPs
+- Click Allocate and repeat this process until you have 3 elastic IP addresses
+![Screenshot from 2025-03-06 02-56-50](https://github.com/user-attachments/assets/bd4e6035-516e-43c6-aa0f-de76327d7099)
+- Select one of the allocated IP address and click on Actions > Associate Elastic IP Address
+- Select the instance "Indexer_1" and click Associate </br>
+Repeat this process until "Indexer_2" and "Cluster_Master" have the associated Elastic IPs
+
+
+
+
 
 
 

@@ -120,11 +120,18 @@ REF 20 - Successfully receiving the triggered alerts on our terminal
 - Run the below command to start snort in alert mode with 'fast' option which writes the logs in the default alert file
 - sudo snort -q -l /var/log/snort -i wlp0s20f3 -A fast -c /etc/snort/snort.conf
 - The alert file is located in /var/log/snort/ . Open the file to check if the alerts are being recorded.
-- sudo /var/log/snort/alert
+- sudo vim /var/log/snort/alert
 ![Screenshot from 2025-03-05 21-06-10](https://github.com/user-attachments/assets/661ae82b-dbf9-468c-b9e4-6b9eae4da2fb)
 REF 21 - The alert file which is being updated for every triggered snort alert
 - We see that the alert logs are being stored in the alert file and this file will be updated with every triggered alert.
-- 
+
+###### NOTES ON SNORT
+- Enter "man snort" on the terminal to read the manual for Snort which is really helpful to understand it's options
+- We can create and customize our own rules in etc/snort/rules/local.rules file
+- If you need any help in creating snort rules, go to https://snorpy.cyb3rs3c.net/ for a snort rules creator
+![Screenshot from 2025-03-05 21-18-38](https://github.com/user-attachments/assets/7db036be-2463-4da0-99f1-194803be9015)
+REF 22 - SNORPY - A web based snort rule creator
+
 
 
 

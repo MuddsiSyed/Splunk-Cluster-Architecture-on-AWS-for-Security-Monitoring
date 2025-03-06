@@ -48,6 +48,7 @@ REF 3 - Creating Username and Password
 ![Screenshot from 2025-03-04 04-23-40](https://github.com/user-attachments/assets/a385f040-a235-4c47-a9d2-6fe907b01752)
 REF 4 - Sucessfull Splunk Installation
 - If you see the above screen then splunk is successfully installed
+- sudo /opt/splunk/bin/splunk enable boot-start (To enable boot-start for Splunk)
 - For local computer, we can access the splunk's web interface from http://127.0.0.1:8000
 - Log in to splunk's web interface and go to Server Settings > General Settings and enable SSL (HTTPS), save and restart splunk when you get the prompt to restart
 ![Screenshot from 2025-03-04 04-33-07](https://github.com/user-attachments/assets/316dbbe8-aec4-43d3-b7a2-329838217d5b)
@@ -181,9 +182,17 @@ REF 31 - Associating Elastic IPs
 Repeat this process until "Indexer_2" and "Cluster_Master" have the associated Elastic IPs
 ![Screenshot from 2025-03-06 03-12-33](https://github.com/user-attachments/assets/0a1f4de5-7cca-46ac-ae49-61cd67abf228)
 REF 32 - All 3 Elastic IPs associated with the "Indexer_1" , "Indexer_2" and "Cluster_Master" respectively
-
-
-
-
+- Now let's configure the security group for my local machine to access these instances and also to allow traffic via TCP in between these instances
+![Screenshot from 2025-03-07 04-13-44](https://github.com/user-attachments/assets/75fda309-2a2e-46ca-9e6c-00f0e86a233b)
+REF 33 - Configuring Security Group in AWS
+- SSH into "Indexer_1" , "Indexer_2" and "Cluster_Master" and follow the below steps (these will be the same steps we followed to install Splunk in Heavy Forwarder on our local Ubuntu machine)
+- - sudo apt-get update && sudo apt-get upgrade (To upgrade Ubuntu)
+- wget -O splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.2.2/linux/splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb" (To Download Splunk DEB File)
+- sudo apt install ./splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb (To install Splunk Enterprise)
+- sudo /opt/splunk/bin/splunk start — accept-license (To accept the license before starting Splunk
+- Press and enter Y to accept the licence and proceed with the installation
+- Create your username and password for splunk log in
+- sudo /opt/splunk/bin/splunk start (To start Splunk)
+- sudo /opt/splunk/bin/splunk enable boot-start (To enable boot-start for Splunk)
 
 

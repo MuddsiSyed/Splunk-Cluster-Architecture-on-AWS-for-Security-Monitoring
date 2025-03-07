@@ -159,7 +159,7 @@ REF 28 - Triggered alerts being logged in splunk in real time
 ###### The Heavy Forwarder is now configured to receive the DHCP and Snort IDS logs in real time.
 
 ### Setting Up AWS EC2 Instances and Splunk Cluster Architecture 
-#### Setting Up the indexer clusters on AWS EC2 instances
+#### Setting Up the indexer cluster on AWS EC2 instances
 - To set up an indexer cluster, we atleast need 2 indexers and 1 cluster master (manager node)
 - Let's spin up 3 EC2 instances with the below configuration </br>
   Operating System: Ubuntu </br>
@@ -186,7 +186,7 @@ REF 32 - All 3 Elastic IPs associated with the "Indexer_1" , "Indexer_2" and "Cl
 ![Screenshot from 2025-03-07 04-13-44](https://github.com/user-attachments/assets/75fda309-2a2e-46ca-9e6c-00f0e86a233b)
 REF 33 - Configuring Security Group in AWS
 - SSH into "Indexer_1" , "Indexer_2" and "Cluster_Master" and follow the below steps (these will be the same steps we followed to install Splunk in Heavy Forwarder on our local Ubuntu machine)
-- - sudo apt-get update && sudo apt-get upgrade (To upgrade Ubuntu)
+- sudo apt-get update && sudo apt-get upgrade (To upgrade Ubuntu)
 - wget -O splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.2.2/linux/splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb" (To Download Splunk DEB File)
 - sudo apt install ./splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb (To install Splunk Enterprise)
 - sudo /opt/splunk/bin/splunk start — accept-license (To accept the license before starting Splunk
@@ -224,8 +224,56 @@ REF 37 - Selecting Cluster_Master to be configured as Manager Node (Cluster Mast
 - Select Manager Node and click next
 - Keep Replication Factor and Search Factor as 2
 ![Screenshot from 2025-03-07 06-46-57](https://github.com/user-attachments/assets/169cffed-9f97-4509-812e-d22b699831b9)
+REF 38 - Configuring Cluster Master
 - Click on Restart Now
+- Log in again to Cluster_Master splunk web and you will see below --
+![Screenshot from 2025-03-07 22-33-16](https://github.com/user-attachments/assets/45c7d260-5171-4bb9-b917-912e3fdcfb10)
+REF 39 - Cluster Master Configured Successfully
+- Now log in to Indexer_1 Splunk Web and go to Settings > Indexer Clustering
+- Click on Enable Indexer Clustering and select Peer Node and click Next
+![Screenshot from 2025-03-07 22-37-11](https://github.com/user-attachments/assets/7b46578e-6c78-48b5-bfe6-a2a9be24be6a)
+REF 40 - Enabling Indexer Clustering as a Peer Node for Indexer_1
+- Enter the private IP address of the Cluster_Master instance as the manager url (https://172.31.47.184:8089)
+- Enter 8080 as the Peer replication port
+###### Note: 8089 is the management port and 8080 is the replication port
+![Screenshot from 2025-03-07 22-39-44](https://github.com/user-attachments/assets/2edc8184-918c-4a3c-976a-b4654f095c10)
+REF 41 - Configuring peer node (Indexer in cluster)
+- Click Enable peer node and then click on restart now
+- Now let's log in to Indexer_2 splunk web and repeat the same process to set up indexer clustering as a Peer Node
+- After we enabled Indexer_2 as peer node and restarted it let's log in back to Cluster_Master splunk web to check the status of the cluster
+![Screenshot from 2025-03-07 23-04-55](https://github.com/user-attachments/assets/ceba6380-0c67-46df-845c-30ceda4eb3fc)
+REF 42 - Manager Node (Cluster_Master) indicating the cluster is successfully configured
+- You can see the private IP addresses of "Indexer_1" and "Indexer_2" under peer name (that means both the indexers are successfully configured in this indexer cluster)
+- You can also note that the cluster is healthy if you see "All Data is Searchable" , "Search Factor is Met" and "Replication Factor is Met"
 
+#### Setting Up the search head cluster on AWS EC2 instances
+
+- To set up an search head cluster, we atleast need 1 search head and 1 search head (Captain)
+- Let's spin up 2 more EC2 instances with the below configuration </br>
+  Operating System: Ubuntu </br>
+  Instance Type: t2.medium </br>
+  Security Group: Keep the same security group you select for all instances </br>
+  Configure Storage: 30GiB </br>
+  Edit The name Of the Instances to SearchHead_1 and SearchHead_Captain
+![Screenshot from 2025-03-07 23-32-39](https://github.com/user-attachments/assets/d450f8d5-79a1-438f-b2de-4aaac507419e)
+REF 43 - Starting EC2 Instances for Search Head Cluster
+- SSH into "SearchHead_1" and "SearchHead_Captain" and follow the below steps (these will be the same steps we followed to install Splunk in Heavy Forwarder on our local Ubuntu machine)
+- sudo apt-get update && sudo apt-get upgrade (To upgrade Ubuntu)
+- wget -O splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.2.2/linux/splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb" (To Download Splunk DEB File)
+- sudo apt install ./splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb (To install Splunk Enterprise)
+- sudo /opt/splunk/bin/splunk start — accept-license (To accept the license before starting Splunk
+- Press and enter Y to accept the licence and proceed with the installation
+- Create your username and password for splunk log in
+- sudo /opt/splunk/bin/splunk start (To start Splunk)
+- sudo /opt/splunk/bin/splunk enable boot-start (To enable boot-start for Splunk)
+- Now let's note down the IP addressess of all our AWS Instances including search heads
+
+| Instance Name  | Public IP | Private IP |
+| ------------- | ------------- | ------------ |
+| SearchHead_1 | 13.232.83.97 | 172.31.41.162 |
+| SearchHead_Captain  | 13.232.60.122 | 172.31.34.86 |
+
+###### Please note the public IP will change whenever you restart the EC2 Instance
 
 
 

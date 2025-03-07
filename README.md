@@ -294,7 +294,12 @@ REF 43 - Starting EC2 Instances for Search Head Cluster
 
 ### Forwarding The Data Into Our Cluster Through Heavy Forwarder
 
-
+#### Copying The Indexes we created in Heavy Forwarder
+- For our data to be forwarded correctly in the Cluster, the indexes which we have created for the data to be ingested in Heavy Forwarder should also be created in all the indexers in the cluster
+- We can do this by copying indexes.conf configuration in the heavy forwarder
+- First we need to check the app names in which we have created our indexes
+- Log in on Heavy Forwarder's (Our local Machine's) Splunk Web and click on Settings > Indexes
+- 
 
 
 

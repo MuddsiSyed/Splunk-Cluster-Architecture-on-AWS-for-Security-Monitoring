@@ -213,8 +213,11 @@ REF 33 - Configuring Security Group in AWS
 
 - Log in to splunk on each of the instance and display their intance names on each of them respectively through global banners --
 ![Screenshot from 2025-03-07 06-31-52](https://github.com/user-attachments/assets/b47ade66-b0f9-4791-8b32-92d554b87c56)
+REF 34 - Indexer_1 Splunk Web
 ![Screenshot from 2025-03-07 06-34-12](https://github.com/user-attachments/assets/704653fb-e30b-41c8-9c6a-0e7458bc752e)
+REF 35 - Indexer_2 Splunk Web
 ![Screenshot from 2025-03-07 06-34-34](https://github.com/user-attachments/assets/9bc28789-2d82-40e6-b094-0120710241d8)
+REF 36 - Cluster_Master Splunk Web
 
 
 

@@ -211,4 +211,10 @@ REF 33 - Configuring Security Group in AWS
 | Indexer_2  | https://3.110.22.171:8000 |
 | Cluster_Master  | https://3.111.202.177:8000 |
 
+- Log in to splunk on each of the instance and display their intance names on each of them respectively through global banners --
+![Screenshot from 2025-03-07 06-31-52](https://github.com/user-attachments/assets/b47ade66-b0f9-4791-8b32-92d554b87c56)
+![Screenshot from 2025-03-07 06-34-12](https://github.com/user-attachments/assets/704653fb-e30b-41c8-9c6a-0e7458bc752e)
+![Screenshot from 2025-03-07 06-34-34](https://github.com/user-attachments/assets/9bc28789-2d82-40e6-b094-0120710241d8)
+
+
 

@@ -194,7 +194,7 @@ REF 33 - Configuring Security Group in AWS
 - Create your username and password for splunk log in
 - sudo /opt/splunk/bin/splunk start (To start Splunk)
 - sudo /opt/splunk/bin/splunk enable boot-start (To enable boot-start for Splunk)
-
+- Now let's note down the IP addresses of our AWS instances --
 
 | Instance Name  | Elastic Public IP | Private IP |
 | ------------- | ------------- | ------------ |
@@ -202,5 +202,13 @@ REF 33 - Configuring Security Group in AWS
 | Indexer_2  | 3.110.22.171 | 172.31.32.159 |
 | Cluster_Master  | 3.111.202.177 | 172.31.36.177 |
 
+- We can now access splunk web installed on the above instances through by http://Elastic Public IP:8000
+- After enabling SSL (HTTPS) on all of the instances, here are the splunk web details that we can access through our local machine --
+
+| Instance Name  | Splunk Web Address |
+| ------------- | ------------- |
+| Indexer_1  | https://13.233.221.135:8000  |
+| Indexer_2  | https://3.110.22.171:8000 |
+| Cluster_Master  | https://3.111.202.177:8000 |
 
 

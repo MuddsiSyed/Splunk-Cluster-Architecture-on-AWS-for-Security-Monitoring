@@ -275,5 +275,26 @@ REF 43 - Starting EC2 Instances for Search Head Cluster
 
 ###### Please note the public IP will change whenever you restart the EC2 Instance
 
+- We can now access splunk web installed on the above instances through by http://Public IP:8000
+- Enable SSL (HTTPS) on the above insances
+- Log in to splunk on each of the instance and display their intance names on each of them respectively through global banners
+![Screenshot from 2025-03-08 00-04-31](https://github.com/user-attachments/assets/25662b81-b220-467d-bf7e-3147e1f40925)
+![Screenshot from 2025-03-08 00-04-51](https://github.com/user-attachments/assets/3ffd6fae-447a-427c-aa38-6d8890749515)
+- Now on SearchHead_1 splunk web, click Settings > Indexer Clustering and click Enable Indexer Clustering
+- Select Search Head Node and click Next
+![Screenshot from 2025-03-08 00-07-55](https://github.com/user-attachments/assets/14e2b942-ee39-4431-81ed-d6d761590fdd)
+- Enter the private IP address of the Cluster_Master instance as the manager url (https://172.31.47.184:8089)
+- Click Enable search head node
+- Click Restart Now
+- Repeat the same process on SearchHead_Captain splunk web and restart it
+- Log in back to the Cluster_Master splunk web and click on Settings > Indexer Clustering
+- You can see the private IPs of SearchHead_1 and SearchHead_Captain along with the private IP of the Cluster_Master under Search Head Name
+![Screenshot from 2025-03-08 00-17-44](https://github.com/user-attachments/assets/bd908de6-3ec3-4b1d-bcc3-7c28aa34cf54)
+- Our cluster architecture is now completely up and running and is ready for the data to be received by our heavy forwarder
+
+### Forwarding The Data Into Our Cluster Through Heavy Forwarder
+
+
+
 
 

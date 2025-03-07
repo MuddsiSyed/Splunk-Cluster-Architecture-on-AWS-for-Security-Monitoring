@@ -200,7 +200,7 @@ REF 33 - Configuring Security Group in AWS
 | ------------- | ------------- | ------------ |
 | Indexer_1  | 13.233.221.135  | 172.31.38.143 |
 | Indexer_2  | 3.110.22.171 | 172.31.32.159 |
-| Cluster_Master  | 3.111.202.177 | 172.31.36.177 |
+| Cluster_Master  | 3.111.202.177 | 172.31.47.184 |
 
 - We can now access splunk web installed on the above instances through by http://Elastic Public IP:8000
 - After enabling SSL (HTTPS) on all of the instances, here are the splunk web details that we can access through our local machine --
@@ -223,7 +223,7 @@ REF 36 - Cluster_Master Splunk Web
 REF 37 - Selecting Cluster_Master to be configured as Manager Node (Cluster Master)
 - Select Manager Node and click next
 - Keep Replication Factor and Search Factor as 2
-![Screenshot from 2025-03-07 06-46-57](https://github.com/user-attachments/assets/839d5eaf-f482-48f7-b601-d14e72b38f15)
+![Screenshot from 2025-03-07 06-46-57](https://github.com/user-attachments/assets/169cffed-9f97-4509-812e-d22b699831b9)
 - Click on Restart Now
 
 

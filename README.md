@@ -218,6 +218,14 @@ REF 34 - Indexer_1 Splunk Web
 REF 35 - Indexer_2 Splunk Web
 ![Screenshot from 2025-03-07 06-34-34](https://github.com/user-attachments/assets/9bc28789-2d82-40e6-b094-0120710241d8)
 REF 36 - Cluster_Master Splunk Web
+- Now on Cluster_Master splunk web, click settings > Indexer Clustering and click on Enable Indexer Clustering
+![Screenshot from 2025-03-07 06-44-51](https://github.com/user-attachments/assets/fc4ca0f0-ee30-4205-8c28-e9d786946a42)
+REF 37 - Selecting Cluster_Master to be configured as Manager Node (Cluster Master)
+- Select Manager Node and click next
+- Keep Replication Factor and Search Factor as 2
+![Screenshot from 2025-03-07 06-46-57](https://github.com/user-attachments/assets/839d5eaf-f482-48f7-b601-d14e72b38f15)
+- Click on Restart Now
+
 
 
 

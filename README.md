@@ -6,7 +6,7 @@ The goal of this project is to design and implement a scalable Splunk Cluster Ar
 
 
 
-![Splunk Clustered Architecture Black](https://github.com/user-attachments/assets/cd2c503a-9cfc-4063-95f6-6d599d5105a1)
+![Splunk Clustered Architecture Black](https://github.com/user-attachments/assets/cd2c503a-9cfc-4063-95f6-6d599d5105a1) </br>
 REF 1 - SPLUNK CLUSTERED ARCHITECTURE
 
 

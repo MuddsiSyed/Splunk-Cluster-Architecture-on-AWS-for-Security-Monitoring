@@ -279,10 +279,13 @@ REF 43 - Starting EC2 Instances for Search Head Cluster
 - Enable SSL (HTTPS) on the above insances
 - Log in to splunk on each of the instance and display their intance names on each of them respectively through global banners
 ![Screenshot from 2025-03-08 00-04-31](https://github.com/user-attachments/assets/25662b81-b220-467d-bf7e-3147e1f40925)
+REF 44 - SearchHead_1 Splunk Web
 ![Screenshot from 2025-03-08 00-04-51](https://github.com/user-attachments/assets/3ffd6fae-447a-427c-aa38-6d8890749515)
+REF 45 - SearchHead_Captain
 - Now on SearchHead_1 splunk web, click Settings > Indexer Clustering and click Enable Indexer Clustering
 - Select Search Head Node and click Next
 ![Screenshot from 2025-03-08 00-07-55](https://github.com/user-attachments/assets/14e2b942-ee39-4431-81ed-d6d761590fdd)
+REF 46 - Selecting Search Head Node
 - Enter the private IP address of the Cluster_Master instance as the manager url (https://172.31.47.184:8089)
 - Click Enable search head node
 - Click Restart Now
@@ -290,6 +293,7 @@ REF 43 - Starting EC2 Instances for Search Head Cluster
 - Log in back to the Cluster_Master splunk web and click on Settings > Indexer Clustering
 - You can see the private IPs of SearchHead_1 and SearchHead_Captain along with the private IP of the Cluster_Master under Search Head Name
 ![Screenshot from 2025-03-08 00-17-44](https://github.com/user-attachments/assets/bd908de6-3ec3-4b1d-bcc3-7c28aa34cf54)
+REF 47 - Search Heads in Cluster_Master (Master Node)
 - Our cluster architecture is now completely up and running and is ready for the data to be received by our heavy forwarder
 
 ### Forwarding The Data Into Our Cluster Through Heavy Forwarder
@@ -299,7 +303,30 @@ REF 43 - Starting EC2 Instances for Search Head Cluster
 - We can do this by copying indexes.conf configuration in the heavy forwarder
 - First we need to check the app names in which we have created our indexes
 - Log in on Heavy Forwarder's (Our local Machine's) Splunk Web and click on Settings > Indexes
-- 
+![Screenshot from 2025-03-08 00-40-52](https://github.com/user-attachments/assets/25dd01a4-328f-497a-ad68-eae4fbf332ce)
+REF 48 - Identifying indexes we created while ingesting data in Heavy Forwarder
+- We can see that we have created the indexes "dhcp_logs" and "snort_alert" in the Heavy Forwarder
+- Their indexes.conf file will be located under their respective app folders (alert_logevent and 	snortalert)
+- On your local machine's terminal run the following commands to copy the indexes.conf configuration
+- sudo vim /opt/splunk/etc/apps/alert_logevent/local/indexes.conf
+- Copy the configuration and paste it on a note pad
+- sudo vim /opt/splunk/etc/apps/snortalert/local/indexes.conf
+- Copy the configuration and paste it on a note pad
+- Here are the configuration that we have copied for both the indexes </br>
+
+[dhcp_logs] </br>
+coldPath = $SPLUNK_DB/dhcp_logs/colddb </br>
+homePath = $SPLUNK_DB/dhcp_logs/db </br>
+maxTotalDataSizeMB = 512000 </br>
+thawedPath = $SPLUNK_DB/dhcp_logs/thaweddb </br> </br>
+
+[snort_alert] </br>
+coldPath = $SPLUNK_DB/snort_alert/colddb </br>
+homePath = $SPLUNK_DB/snort_alert/db </br>
+maxTotalDataSizeMB = 512000 </br>
+thawedPath = $SPLUNK_DB/snort_alert/thaweddb </br>
+
+
 
 
 

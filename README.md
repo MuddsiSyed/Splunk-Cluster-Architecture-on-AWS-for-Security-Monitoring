@@ -196,5 +196,11 @@ REF 33 - Configuring Security Group in AWS
 - sudo /opt/splunk/bin/splunk enable boot-start (To enable boot-start for Splunk)
 
 
+| Instance Name  | Elastic Public IP | Private IP |
+| ------------- | ------------- | ------------ |
+| Indexer_1  | 13.233.221.135  | 172.31.38.143 |
+| Indexer_2  | 3.110.22.171 | 172.31.32.159 |
+| Cluster_Master  | 3.111.202.177 | 172.31.36.177 |
+
 
 

@@ -249,16 +249,16 @@ REF 42 - Manager Node (Cluster_Master) indicating the cluster is successfully co
 
 #### Setting Up the search head cluster on AWS EC2 instances
 
-- To set up an search head cluster, we atleast need 1 search head and 1 search head (Captain)
+- To set up an search head cluster, we atleast need 2 search heads
 - Let's spin up 2 more EC2 instances with the below configuration </br>
   Operating System: Ubuntu </br>
   Instance Type: t2.medium </br>
   Security Group: Keep the same security group you select for all instances </br>
   Configure Storage: 30GiB </br>
-  Edit The name Of the Instances to SearchHead_1 and SearchHead_Captain
+  Edit The name Of the Instances to SearchHead_1 and SearchHead_2
 ![Screenshot from 2025-03-07 23-32-39](https://github.com/user-attachments/assets/d450f8d5-79a1-438f-b2de-4aaac507419e)
 REF 43 - Starting EC2 Instances for Search Head Cluster
-- SSH into "SearchHead_1" and "SearchHead_Captain" and follow the below steps (these will be the same steps we followed to install Splunk in Heavy Forwarder on our local Ubuntu machine)
+- SSH into "SearchHead_1" and "SearchHead_2" and follow the below steps (these will be the same steps we followed to install Splunk in Heavy Forwarder on our local Ubuntu machine)
 - sudo apt-get update && sudo apt-get upgrade (To upgrade Ubuntu)
 - wget -O splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.2.2/linux/splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb" (To Download Splunk DEB File)
 - sudo apt install ./splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb (To install Splunk Enterprise)
@@ -272,7 +272,7 @@ REF 43 - Starting EC2 Instances for Search Head Cluster
 | Instance Name  | Public IP | Private IP |
 | ------------- | ------------- | ------------ |
 | SearchHead_1 | 13.232.83.97 | 172.31.41.162 |
-| SearchHead_Captain  | 13.232.60.122 | 172.31.34.86 |
+| SearchHead_2  | 13.232.60.122 | 172.31.34.86 |
 
 ###### Please note the public IP will change whenever you restart the EC2 Instance
 
@@ -282,7 +282,7 @@ REF 43 - Starting EC2 Instances for Search Head Cluster
 ![Screenshot from 2025-03-08 00-04-31](https://github.com/user-attachments/assets/25662b81-b220-467d-bf7e-3147e1f40925)
 REF 44 - SearchHead_1 Splunk Web
 ![Screenshot from 2025-03-08 00-04-51](https://github.com/user-attachments/assets/3ffd6fae-447a-427c-aa38-6d8890749515)
-REF 45 - SearchHead_Captain
+REF 45 - SearchHead_2
 - Now on SearchHead_1 splunk web, click Settings > Indexer Clustering and click Enable Indexer Clustering
 - Select Search Head Node and click Next
 ![Screenshot from 2025-03-08 00-07-55](https://github.com/user-attachments/assets/14e2b942-ee39-4431-81ed-d6d761590fdd)
@@ -290,9 +290,9 @@ REF 46 - Selecting Search Head Node
 - Enter the private IP address of the Cluster_Master instance as the manager url (https://172.31.47.184:8089)
 - Click Enable search head node
 - Click Restart Now
-- Repeat the same process on SearchHead_Captain splunk web and restart it
+- Repeat the same process on SearchHead_2 splunk web and restart it
 - Log in back to the Cluster_Master splunk web and click on Settings > Indexer Clustering
-- You can see the private IPs of SearchHead_1 and SearchHead_Captain along with the private IP of the Cluster_Master under Search Head Name
+- You can see the private IPs of SearchHead_1 and SearchHead_2 along with the private IP of the Cluster_Master under Search Head Name
 ![Screenshot from 2025-03-08 00-17-44](https://github.com/user-attachments/assets/bd908de6-3ec3-4b1d-bcc3-7c28aa34cf54)
 REF 47 - Search Heads in Cluster_Master (Master Node)
 - Our cluster architecture is now completely up and running and is ready for the data to be received by our heavy forwarder

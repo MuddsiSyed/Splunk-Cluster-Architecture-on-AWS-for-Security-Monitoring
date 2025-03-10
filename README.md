@@ -2,12 +2,11 @@
 
 ## Objective:
 
-The goal of this project is to design and implement a scalable Splunk Cluster Architecture hosted on AWS for centralized log management and real-time security monitoring. This system will ingest and process network security alerts from Snort IDS and DHCP logs from a Wi-Fi router. By leveraging the power of AWS infrastructure, this setup aims to provide robust and fault-tolerant data collection, analysis, and visualization capabilities, enhancing threat detection and network performance monitoring.
+The goal of this project is to design and implement a scalable Splunk Cluster Architecture hosted on AWS for centralized log management and real-time security monitoring. This system will ingest and process network security alerts from Snort IDS and DHCP logs from a Wi-Fi router. By leveraging the power of AWS infrastructure, this setup aims to provide robust and fault-tolerant data collection, analysis, and visualization capabilities, enhancing threat detection and network performance monitoring. </br></br>
 
 
-
-![Splunk Clustered Architecture Black](https://github.com/user-attachments/assets/cd2c503a-9cfc-4063-95f6-6d599d5105a1) </br>
-REF 1 - SPLUNK CLUSTERED ARCHITECTURE
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ![Splunk Clustered Architecture drawio (1)](https://github.com/user-attachments/assets/6aefd76b-6d50-4d43-ad20-e2c63f6e758f) </br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; REF 1 - SPLUNK CLUSTERED ARCHITECTURE </br></br>
 
 
 This project will provide a comprehensive understanding of both security monitoring and cloud-based architecture, allowing for the development of a flexible and scalable solution for real-time network analysis and threat detection.
@@ -38,26 +37,26 @@ This project will provide a comprehensive understanding of both security monitor
 - wget -O splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.2.2/linux/splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb" (To Download Splunk DEB File)
 - sudo apt install ./splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb (To install Splunk Enterprise)
 - sudo /opt/splunk/bin/splunk start — accept-license (To accept the license before starting Splunk
-![Screenshot from 2025-03-04 04-10-56](https://github.com/user-attachments/assets/dff46161-b59b-4420-93f1-5ca144fffa7e)
+![Screenshot from 2025-03-04 04-10-56](https://github.com/user-attachments/assets/dff46161-b59b-4420-93f1-5ca144fffa7e) </br>
 REF 2 - Accepting License 
 - Press and enter Y to accept the licence and proceed with the installation
 - Create your username and password for splunk log in
-![Screenshot from 2025-03-04 04-16-57](https://github.com/user-attachments/assets/3fe708ef-95f1-483a-8316-e5f912c7b59d)
+![Screenshot from 2025-03-04 04-16-57](https://github.com/user-attachments/assets/3fe708ef-95f1-483a-8316-e5f912c7b59d) </br>
 REF 3 - Creating Username and Password
 - sudo /opt/splunk/bin/splunk start (To start Splunk)
-![Screenshot from 2025-03-04 04-23-40](https://github.com/user-attachments/assets/a385f040-a235-4c47-a9d2-6fe907b01752)
+![Screenshot from 2025-03-04 04-23-40](https://github.com/user-attachments/assets/a385f040-a235-4c47-a9d2-6fe907b01752) </br>
 REF 4 - Sucessfull Splunk Installation
 - If you see the above screen then splunk is successfully installed
 - sudo /opt/splunk/bin/splunk enable boot-start (To enable boot-start for Splunk)
 - For local computer, we can access the splunk's web interface from http://127.0.0.1:8000
 - Log in to splunk's web interface and go to Server Settings > General Settings and enable SSL (HTTPS), save and restart splunk when you get the prompt to restart
-![Screenshot from 2025-03-04 04-33-07](https://github.com/user-attachments/assets/316dbbe8-aec4-43d3-b7a2-329838217d5b)
+![Screenshot from 2025-03-04 04-33-07](https://github.com/user-attachments/assets/316dbbe8-aec4-43d3-b7a2-329838217d5b) </br>
 REF 5 - Enabling SSL (HTTPS)
 - Now you can access splunk from https://127.0.0.1:8000 on your local machine
-![Screenshot from 2025-03-04 04-39-33](https://github.com/user-attachments/assets/8beb6b0c-3a63-480b-8fe6-c6af8327b981)
+![Screenshot from 2025-03-04 04-39-33](https://github.com/user-attachments/assets/8beb6b0c-3a63-480b-8fe6-c6af8327b981) </br>
 REF 6 - Log IN on SSL enabled splunk web
 - From the splunk web page, go to Server Settings > Global Banner, click on Banner Visibility to make it (ON), choose yellow and enter Heavy Forwarder in the message field
-![Screenshot from 2025-03-04 21-59-59](https://github.com/user-attachments/assets/7cf5cfd5-0cba-4548-a07f-2b03230c79fd)
+![Screenshot from 2025-03-04 21-59-59](https://github.com/user-attachments/assets/7cf5cfd5-0cba-4548-a07f-2b03230c79fd) </br>
 REF 7 - Setting up a banner to identify Heavy Forwarder in the cluster architecture
 - Now our Heavy Forwarder is ready for configuration
 
@@ -97,7 +96,7 @@ REF 14 - Finding the interface name and the range of your IP address
 REF 15 - Turning on promisc on the interface
 - sudo vim /etc/snort/snort.conf (to edit the snort configuration file)
 - scroll down and edit network variable from any to ipvar HOME_NET 192.168.0.0/24
-![Screenshot from 2025-03-05 03-46-01](https://github.com/user-attachments/assets/4100ce8a-1c4b-4a7d-a423-00f9ff2fa354)
+![Screenshot from 2025-03-05 03-46-01](https://github.com/user-attachments/assets/4100ce8a-1c4b-4a7d-a423-00f9ff2fa354) </br>
 REF 16 - Editing the network variable
 - :wq (save the file)
 - Now to test snort we can create a custom rule to trigger an alert
@@ -255,9 +254,7 @@ REF 42 - Manager Node (Cluster_Master) indicating the cluster is successfully co
   Instance Type: t2.medium </br>
   Security Group: Keep the same security group you select for all instances </br>
   Configure Storage: 30GiB </br>
-  Edit The name Of the Instances to SearchHead_1 and SearchHead_2
-![Screenshot from 2025-03-07 23-32-39](https://github.com/user-attachments/assets/d450f8d5-79a1-438f-b2de-4aaac507419e)
-REF 43 - Starting EC2 Instances for Search Head Cluster
+  Edit The name Of the Instances to SearchHead_1 and SearchHead_2 
 - SSH into "SearchHead_1" and "SearchHead_2" and follow the below steps (these will be the same steps we followed to install Splunk in Heavy Forwarder on our local Ubuntu machine)
 - sudo apt-get update && sudo apt-get upgrade (To upgrade Ubuntu)
 - wget -O splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.2.2/linux/splunk-9.2.2-d76edf6f0a15-linux-2.6-amd64.deb" (To Download Splunk DEB File)
@@ -280,13 +277,11 @@ REF 43 - Starting EC2 Instances for Search Head Cluster
 - Enable SSL (HTTPS) on the above insances
 - Log in to splunk on each of the instance and display their intance names on each of them respectively through global banners
 ![Screenshot from 2025-03-08 00-04-31](https://github.com/user-attachments/assets/25662b81-b220-467d-bf7e-3147e1f40925)
-REF 44 - SearchHead_1 Splunk Web
-![Screenshot from 2025-03-08 00-04-51](https://github.com/user-attachments/assets/3ffd6fae-447a-427c-aa38-6d8890749515)
-REF 45 - SearchHead_2
+REF 43 - SearchHead_1 Splunk Web
 - Now on SearchHead_1 splunk web, click Settings > Indexer Clustering and click Enable Indexer Clustering
 - Select Search Head Node and click Next
 ![Screenshot from 2025-03-08 00-07-55](https://github.com/user-attachments/assets/14e2b942-ee39-4431-81ed-d6d761590fdd)
-REF 46 - Selecting Search Head Node
+REF 44 - Selecting Search Head Node
 - Enter the private IP address of the Cluster_Master instance as the manager url (https://172.31.47.184:8089)
 - Click Enable search head node
 - Click Restart Now
@@ -294,7 +289,7 @@ REF 46 - Selecting Search Head Node
 - Log in back to the Cluster_Master splunk web and click on Settings > Indexer Clustering
 - You can see the private IPs of SearchHead_1 and SearchHead_2 along with the private IP of the Cluster_Master under Search Head Name
 ![Screenshot from 2025-03-08 00-17-44](https://github.com/user-attachments/assets/bd908de6-3ec3-4b1d-bcc3-7c28aa34cf54)
-REF 47 - Search Heads in Cluster_Master (Master Node)
+REF 45 - Search Heads in Cluster_Master (Master Node)
 - Our cluster architecture is now completely up and running and is ready for the data to be received by our heavy forwarder
 
 ### Forwarding The Data Into Our Cluster Through Heavy Forwarder
@@ -305,7 +300,7 @@ REF 47 - Search Heads in Cluster_Master (Master Node)
 - First we need to check the app names in which we have created our indexes
 - Log in on Heavy Forwarder's (Our local Machine's) Splunk Web and click on Settings > Indexes
 ![Screenshot from 2025-03-08 00-40-52](https://github.com/user-attachments/assets/25dd01a4-328f-497a-ad68-eae4fbf332ce)
-REF 48 - Identifying indexes we created while ingesting data in Heavy Forwarder
+REF 46 - Identifying indexes we created while ingesting data in Heavy Forwarder
 - We can see that we have created the indexes "dhcp_logs" and "snort_alert" in the Heavy Forwarder
 - Their indexes.conf file will be located under their respective app folders (alert_logevent and 	snortalert)
 - On your local machine's terminal run the following commands to copy the indexes.conf configuration
@@ -334,22 +329,22 @@ thawedPath = $SPLUNK_DB/snort_alert/thaweddb </br>
 - Paste the indexes
 
 ![Screenshot from 2025-03-10 21-04-56](https://github.com/user-attachments/assets/83c7d4de-3ba7-4cae-aad6-2df48b64e456) </br>
-REF 49 - Pasting the indexes and it's configuration in indexes.conf
+REF 47 - Pasting the indexes and it's configuration in indexes.conf
 - :wq (Save the file and exit)
 
 #### Pushing the indexes through Cluster_Master Splunk Web
 - Go to Settings > Indexer Clustering
 - Click on Edit > Configuration Bundle Actions
 ![Screenshot from 2025-03-10 21-10-54](https://github.com/user-attachments/assets/67f987fc-527a-4b94-a574-b77f59740135) </br>
-REF 50 - Configuration Bundle Actions
+REF 48 - Configuration Bundle Actions
 - Click on Validate and Check Restart
 - Check if the validation is successful and restart is not required
 ![Screenshot from 2025-03-10 21-12-28](https://github.com/user-attachments/assets/6b569b65-4c9d-4045-897b-dc639b7b3212) </br>
-REF 51 - Validation is successful and restart is not required
+REF 49 - Validation is successful and restart is not required
 - Click on Push to push the indexes into both the 'Indexer_1' and 'Indexer_2'
 - After push is successful, all the indexes will be pushed to all the indexers in the cluster
 ![Screenshot from 2025-03-10 21-15-11](https://github.com/user-attachments/assets/4a1ef1e6-dc5b-4420-b3f2-580395c58363) </br>
-REF 52 - Push is Successful
+REF 50 - Push is Successful
 - You can also log in Indexer_1 and Indexer_2 Splunk Web to verify if the indexes are pushed or not
 
 #### Pushing the indexes through terminal 
@@ -368,14 +363,14 @@ REF 52 - Push is Successful
 - Go to Settings > Forwarding and Receiving
 - Click on Add New on Configure forwarding
 ![Screenshot from 2025-03-10 21-42-36](https://github.com/user-attachments/assets/80b732e9-705d-49e7-bdac-090e75f1b6bc) </br>
-REF 53 - Clicking on Addd New to Configure Forwarding
+REF 51 - Clicking on Addd New to Configure Forwarding
 - In host enter the Elastic Public IP Address of Indexer_1 and Indexer_2
 - 13.233.221.135:9997 (To forward data to Indexer_1)
 - Click Save
 - 3.110.22.171:9997 (To Forward data to Indexer_2)
 - Now we can see our heavy forwarder is forwarding the data Indexer_1 and Indexer_2
 ![Screenshot from 2025-03-10 21-53-34](https://github.com/user-attachments/assets/15d05595-d2bd-46d3-a3e9-9f57a0750fbb) </br>
-REF 54 - Forwarding enabled on Heavy Forwarder to both the indexers in the cluster
+REF 52 - Forwarding enabled on Heavy Forwarder to both the indexers in the cluster
 - The Heavy Forwarder is now forwarding all the data into the cluster
 
 ### Searching on the Search Head Cluster

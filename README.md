@@ -336,5 +336,18 @@ thawedPath = $SPLUNK_DB/snort_alert/thaweddb </br>
 REF 49 - Pasting the indexes and it's configuration in indexes.conf
 - :wq (Save the file and exit)
 
+#### Pushing the indexes through Cluster_Master Splunk Web
+- Go to Settings > Indexer Clustering
+- Click on Edit > Configuration Bundle Actions
+![Screenshot from 2025-03-10 21-10-54](https://github.com/user-attachments/assets/67f987fc-527a-4b94-a574-b77f59740135) </br>
+REF 50 - Configuration Bundle Actions
+- Click on Validate and Check Restart
+- Check if the validation is successful and restart is not required
+![Screenshot from 2025-03-10 21-12-28](https://github.com/user-attachments/assets/6b569b65-4c9d-4045-897b-dc639b7b3212) </br>
+REF 51 - Validation is successful and restart is not required
+- Click on Push to push the indexes into both the 'Indexer_1' and 'Indexer_2'
+- After push is successful, all the indexes will be pushed to all the indexers in the cluster
+![Screenshot from 2025-03-10 21-15-11](https://github.com/user-attachments/assets/4a1ef1e6-dc5b-4420-b3f2-580395c58363) </br>
+REF 52 - Push is Successful
 
 

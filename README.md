@@ -298,7 +298,7 @@ REF 47 - Search Heads in Cluster_Master (Master Node)
 
 ### Forwarding The Data Into Our Cluster Through Heavy Forwarder
 
-#### Copying The Indexes we created in Heavy Forwarder
+#### Identifying The Indexes we created in Heavy Forwarder
 - For our data to be forwarded correctly in the Cluster, the indexes which we have created for the data to be ingested in Heavy Forwarder should also be created in all the indexers in the cluster
 - We can do this by copying indexes.conf configuration in the heavy forwarder
 - First we need to check the app names in which we have created our indexes
@@ -326,7 +326,12 @@ homePath = $SPLUNK_DB/snort_alert/db </br>
 maxTotalDataSizeMB = 512000 </br>
 thawedPath = $SPLUNK_DB/snort_alert/thaweddb </br>
 
-
+#### Creating The Above Indexes in The Clustered Indexers Through Cluster Master
+- SSH into Cluster Master EC2 instance
+- CD /opt/splunk/etc/master-apps/_cluster/local
+- sudo vi indexes.conf
+- Paste the indexes
+- :wq (Save the file and exit)
 
 
 

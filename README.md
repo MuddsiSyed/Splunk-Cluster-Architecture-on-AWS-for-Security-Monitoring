@@ -376,5 +376,9 @@ REF 53 - Clicking on Addd New to Configure Forwarding
 - Now we can see our heavy forwarder is forwarding the data Indexer_1 and Indexer_2
 ![Screenshot from 2025-03-10 21-53-34](https://github.com/user-attachments/assets/15d05595-d2bd-46d3-a3e9-9f57a0750fbb) </br>
 REF 54 - Forwarding enabled on Heavy Forwarder to both the indexers in the cluster
+- The Heavy Forwarder is now forwarding all the data into the cluster
+
+### Searching on the Search Head Cluster
+- Log in to any one of the search head -
 
 

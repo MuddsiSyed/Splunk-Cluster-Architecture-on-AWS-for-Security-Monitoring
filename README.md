@@ -328,9 +328,12 @@ thawedPath = $SPLUNK_DB/snort_alert/thaweddb </br>
 
 #### Creating The Above Indexes in The Clustered Indexers Through Cluster Master
 - SSH into Cluster Master EC2 instance
-- CD /opt/splunk/etc/master-apps/_cluster/local
-- sudo vi indexes.conf
+- cd /opt/splunk/etc/master-apps/_cluster/local
+- sudo vi indexes.conf (Creating a indexes.conf file)
 - Paste the indexes
+
+![Screenshot from 2025-03-10 21-04-56](https://github.com/user-attachments/assets/83c7d4de-3ba7-4cae-aad6-2df48b64e456) </br>
+REF 49 - Pasting the indexes and it's configuration in indexes.conf
 - :wq (Save the file and exit)
 
 

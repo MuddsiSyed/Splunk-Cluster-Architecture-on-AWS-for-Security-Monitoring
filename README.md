@@ -245,6 +245,7 @@ REF 41 - Configuring peer node (Indexer in cluster)
 REF 42 - Manager Node (Cluster_Master) indicating the cluster is successfully configured
 - You can see the private IP addresses of "Indexer_1" and "Indexer_2" under peer name (that means both the indexers are successfully configured in this indexer cluster)
 - You can also note that the cluster is healthy if you see "All Data is Searchable" , "Search Factor is Met" and "Replication Factor is Met"
+- Log in to Indexer_1 and Indexer_2 splunk web and configure receiving on 9997 port
 
 #### Setting Up the search head cluster on AWS EC2 instances
 
@@ -349,5 +350,31 @@ REF 51 - Validation is successful and restart is not required
 - After push is successful, all the indexes will be pushed to all the indexers in the cluster
 ![Screenshot from 2025-03-10 21-15-11](https://github.com/user-attachments/assets/4a1ef1e6-dc5b-4420-b3f2-580395c58363) </br>
 REF 52 - Push is Successful
+- You can also log in Indexer_1 and Indexer_2 Splunk Web to verify if the indexes are pushed or not
+
+#### Pushing the indexes through terminal 
+- SSH into Cluster Master EC2 Instance
+- sudo ./splunk validate cluster-bundle --check-restart (To validate the configuration)
+- sudo ./splunk show cluster-bundle-status (To check if the validation is successful and if restart is required)
+- sudo ./splunk apply cluster-bundle (To push the indexes if the validation is successful and restart is not required)
+- We can verify if the indexes are pushed through terminal as well
+- SSH into Indexer_1 and Indexer_2
+- cd /opt/splunk/etc/peer-apps/_cluster/local/
+- vi indexes.conf
+- If the pushed indexes are present in indexes.conf, then the indexes are pushed successfully.
+
+#### Configuring the Heavy Forwarder To Forward The Data Into Our Cluster
+- Log in to Heavy Forwarder Splunk Web
+- Go to Settings > Forwarding and Receiving
+- Click on Add New on Configure forwarding
+![Screenshot from 2025-03-10 21-42-36](https://github.com/user-attachments/assets/80b732e9-705d-49e7-bdac-090e75f1b6bc) </br>
+REF 53 - Clicking on Addd New to Configure Forwarding
+- In host enter the Elastic Public IP Address of Indexer_1 and Indexer_2
+- 13.233.221.135:9997 (To forward data to Indexer_1)
+- Click Save
+- 3.110.22.171:9997 (To Forward data to Indexer_2)
+- Now we can see our heavy forwarder is forwarding the data Indexer_1 and Indexer_2
+![Screenshot from 2025-03-10 21-53-34](https://github.com/user-attachments/assets/15d05595-d2bd-46d3-a3e9-9f57a0750fbb) </br>
+REF 54 - Forwarding enabled on Heavy Forwarder to both the indexers in the cluster
 
 

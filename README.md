@@ -126,7 +126,7 @@ REF 20 - Successfully receiving the triggered alerts on our terminal
 REF 21 - The alert file which is being updated for every triggered snort alert
 - We see that the alert logs are being stored in the alert file and this file will be updated with every triggered alert.
 
-###### NOTES ON SNORT
+##### NOTES ON SNORT
 - Enter "man snort" on the terminal to read the manual for Snort which is really helpful to understand it's options
 - We can create and customize our own rules in etc/snort/rules/local.rules file
 - If you need any help in creating snort rules, go to https://snorpy.cyb3rs3c.net/ for a snort rules creator

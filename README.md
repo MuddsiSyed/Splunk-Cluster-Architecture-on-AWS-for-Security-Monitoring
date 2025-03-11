@@ -5,7 +5,7 @@
 The goal of this project is to design and implement a scalable Splunk Cluster Architecture hosted on AWS for centralized log management and real-time security monitoring. This system will ingest and process network security alerts from Snort IDS and DHCP logs from a Wi-Fi router. By leveraging the power of AWS infrastructure, this setup aims to provide robust and fault-tolerant data collection, analysis, and visualization capabilities, enhancing threat detection and network performance monitoring. </br></br>
 
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ![Splunk Clustered Architecture drawio (1)](https://github.com/user-attachments/assets/6aefd76b-6d50-4d43-ad20-e2c63f6e758f) </br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ![Screencastfrom2025-03-1105-54-01-ezgif com-speed](https://github.com/user-attachments/assets/5717a7a4-cf31-496b-9ffb-bc7d26e631fe) </br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; REF 1 - SPLUNK CLUSTERED ARCHITECTURE </br></br>
 
 

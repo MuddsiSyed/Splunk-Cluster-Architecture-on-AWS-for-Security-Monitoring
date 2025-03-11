@@ -387,6 +387,11 @@ REF 54 - Real time search showing the snort IDS logs on the search head from the
    - Cluster_Master will regulate the functioning of the indexer cluster and manages configuration and coordination among cluster nodes
    - Search Heads will allow searching in the cluster
  
+## Conclusion:
+In conclusion, the implementation of a Splunk Cluster Architecture on AWS for security monitoring has successfully demonstrated the power of cloud-based infrastructure in enhancing network security and performance monitoring. By leveraging AWS's scalability, high availability, and fault tolerance, this project has built a robust and efficient system capable of ingesting and analyzing real-time security data, such as Snort IDS alerts and Wi-Fi router DHCP logs.
 
+The project not only strengthened skills in deploying and optimizing Splunk in a distributed environment but also provided valuable experience in configuring cloud resources on AWS to ensure seamless operation and performance under high data loads. Additionally, the use of Splunk’s powerful dashboards and visualizations enabled real-time monitoring of network security events, providing actionable insights into potential threats and network anomalies.
+
+Overall, this project offers a flexible, scalable solution for centralized log management and security monitoring, with the potential to support growing enterprise environments, ensuring that security and network performance remain consistently monitored and optimized.
 
 

@@ -382,10 +382,10 @@ REF 53 - Pinging our IP Address from a different computer
 ![Screenshot from 2025-03-11 06-17-50](https://github.com/user-attachments/assets/17fd8f44-6992-4652-bdb1-d60bdfab4914)
 REF 54 - Real time search showing the snort IDS logs on the search head from the cluster
 - Therefore our cluster architecture is working as follows --
-   - Logs are being forwarded by Heavy Forwarder in the indexer Cluster
-   - The logs will be stored in Indexer_1 and Indexer_2
+   - Logs are being forwarded by Heavy Forwarder into the indexer Cluster
+   - The logs will be stored in Indexer_1 and Indexer_2 with replication
    - Cluster_Master will regulate the functioning of the indexer cluster and manages configuration and coordination among cluster nodes
-   - Search Heads will allow searching in the cluster thus maintaining the load balance
+   - Search Heads will allow searching in the cluster
  
 
 

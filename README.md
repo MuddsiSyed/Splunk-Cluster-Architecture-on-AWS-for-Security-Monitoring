@@ -374,6 +374,19 @@ REF 52 - Forwarding enabled on Heavy Forwarder to both the indexers in the clust
 - The Heavy Forwarder is now forwarding all the data into the cluster
 
 ### Searching on the Search Head Cluster
-- Log in to any one of the search head -
+- Log in to any one of the search head and do a real time search for index="snort_alert"
+- Ping our local machine from another computer
+![image (3)](https://github.com/user-attachments/assets/ef9d6ca2-7e79-4fb1-be36-4756a25f4233) </br>
+REF 53 - Pinging our IP Address from a different computer
+- The real time search will be updated to show the snort IDS logs (Stored in Indexer_1 and Indexer_2) for ping detection --
+![Screenshot from 2025-03-11 06-17-50](https://github.com/user-attachments/assets/17fd8f44-6992-4652-bdb1-d60bdfab4914)
+REF 54 - Real time search showing the snort IDS logs on the search head from the cluster
+- Therefore our cluster architecture is working as follows --
+   - Logs are being forwarded by Heavy Forwarder in the indexer Cluster
+   - The logs will be stored in Indexer_1 and Indexer_2
+   - Cluster_Master will regulate the functioning of the indexer cluster and manages configuration and coordination among cluster nodes
+   - Search Heads will allow searching in the cluster thus maintaining the load balance
+ 
+
 
 

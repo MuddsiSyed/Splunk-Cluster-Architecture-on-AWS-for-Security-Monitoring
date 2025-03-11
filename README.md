@@ -387,6 +387,20 @@ REF 54 - Real time search showing the snort IDS logs on the search head from the
    - Cluster_Master will regulate the functioning of the indexer cluster and manages configuration and coordination among cluster nodes
    - Search Heads will allow searching in the cluster
  
+## Dashboards and Visualizations:
+### Ping Activity Monitoring Dashboard
+
+<b> Purpose: </b> This dashboard can be used to monitor network scanning and ping activities. Frequent ping events, especially those involving external IP addresses, could be signs of probing or network reconnaissance.
+
+![Screenshot from 2025-03-12 00-20-20](https://github.com/user-attachments/assets/2477fb14-5847-4852-ac86-6a06817f9197)
+
+- <b> Key Visualizations: </b>
+    - <b> Timechart of Ping Detected Alerts: </b> A line chart showing the number of Ping-related alerts on my IP Address (e.g., Ping Detected!) over time. This can help identify patterns of network activity or potential reconnaissance attacks. </br> </br> <b> Search Command Used: </b> index="snort_alert" source="/var/log/snort/alert" | where 		dst_ip=”192.168.0.5” | timechart count by Number_of_Pings </br> </br> </br>
+    - <b> Top Source IPs for Ping Events: </b> A bar chart showing the most frequent source IP addresses that trigger Ping alerts on my IP Address. This could highlight potential unauthorized scanning or reconnaissance. </br> </br>
+       <b> Search Command Used:</b> index="snort_alert" source="/var/log/snort/alert"| where dst_ip="192.168.0.105" | chart count by src_ip </br> </br> </br>
+    - <b> Top Destination IPs for Ping Events: </b> A bar chart or table showing which destination IPs are being targeted by Pings, helping identify critical systems being probed. </br> </br>
+       <b> Search Command Used: </b> index="snort_alert" source="/var/log/snort/alert" | chart count by dst_ip </br> </br> </br>
+   
 ## Conclusion:
 In conclusion, the implementation of a Splunk Cluster Architecture on AWS for security monitoring has successfully demonstrated the power of cloud-based infrastructure in enhancing network security and performance monitoring. By leveraging AWS's scalability, high availability, and fault tolerance, this project has built a robust and efficient system capable of ingesting and analyzing real-time security data, such as Snort IDS alerts and Wi-Fi router DHCP logs.
 

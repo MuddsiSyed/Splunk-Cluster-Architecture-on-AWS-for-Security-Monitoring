@@ -373,7 +373,7 @@ REF 51 - Clicking on Addd New to Configure Forwarding
 REF 52 - Forwarding enabled on Heavy Forwarder to both the indexers in the cluster
 - The Heavy Forwarder is now forwarding all the data into the cluster
 
-### Searching on the Search Head Cluster
+#### Searching on the Search Head Cluster
 - Log in to any one of the search head and do a real time search for index="snort_alert"
 - Ping our local machine from another computer
 ![image (3)](https://github.com/user-attachments/assets/ef9d6ca2-7e79-4fb1-be36-4756a25f4233) </br>
